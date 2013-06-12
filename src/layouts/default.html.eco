@@ -13,7 +13,19 @@
   <main role="main">
     <%- @content %>
   </main>
-  <footer role="content-info"></footer>
+  <footer role="content-info">
+
+  <% if @document.items.length: %>
+  <% for item in @document.items: %>
+    <a href="<%= item.url %>"><%= item.name %></a>
+    <p><%= item.description %></p>
+  <% end %>
+  <% else: %>
+    No items
+  <% end %>
+
+
+  </footer>
   <%- @getBlock("scripts").toHTML() %>
   <%- @getBlock("scripts").add(["/scripts/site.js"]).toHTML() %>
 </body>
