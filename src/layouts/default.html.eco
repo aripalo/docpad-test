@@ -5,6 +5,7 @@
   <title><%= @document.title %></title>
   <%- @getBlock("meta").toHTML() %>
   <%- @getBlock("styles").toHTML() %>
+  <%- @getBlock("styles").add(["/styles/main.css"]).toHTML() %>
 </head>
 <body>
   <header role="banner"></header>
@@ -14,5 +15,6 @@
   </main>
   <footer role="content-info"></footer>
   <%- @getBlock("scripts").toHTML() %>
+  <%- @getBlock("scripts").add(["/scripts/site.js"]).toHTML() %>
 </body>
 </html>
